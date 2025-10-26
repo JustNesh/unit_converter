@@ -3,11 +3,28 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="stylesheet" href="src/style.css"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>unit_converter</title>
+    <title>Unit Converter</title>
   </head>
   <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
+    <div id="hero-container">
+      <header id="hero">Metric/Imperial Unit Conversion</header>
+      <input id="input-el" type="number"/>
+      <button id="convert-btn">Convert</button>
+    </div>
+    <div id="output-outer-container">
+      <div id="output-container-1" class="output-container">
+        <p>Length (Meter/Feet)</p>
+      </div>
+      <div id="output-container-2" class="output-container">
+        <p>Length (Meter/Feet)</p>
+      </div>      
+      <div id="output-container-3" class="output-container">
+        <p>Length (Meter/Feet)</p>
+      </div>      
+    </div>
+
+    <script type="module" src="/src/script.js"></script>
   </body>
 </html>
