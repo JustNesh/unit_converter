@@ -1,3 +1,4 @@
+const VALUE_MAX = 100000;
 const inputEl = document.getElementById("input-el");
 const outputOne = document.getElementById("output-1");
 const outputTwo = document.getElementById("output-2");
@@ -20,7 +21,8 @@ function adjustInputElWidth(){
 }
 
 function renderCalculation(){
-    if(inputElValue){
+    console.log(isNumberUnderLimit())
+    if(inputElValue && isInputValueValid()){
         let meters_to_feet = (Number(inputElValue) * 3.2808399).toFixed(3);
         let feet_to_meters = (Number(inputElValue) / 3.2808399).toFixed(3);
         outputOne.textContent = `${inputElValue} meters = ${meters_to_feet} feet | ${inputElValue} feet = ${feet_to_meters} meters`;
@@ -32,9 +34,30 @@ function renderCalculation(){
         let kilos_to_pounds = (Number(inputElValue) * 2.20462262).toFixed(3);
         let pounds_to_kilos = (Number(inputElValue) / 2.20462262).toFixed(3);
         outputThree.textContent = `${inputElValue} kilos = ${kilos_to_pounds} pounds | ${inputElValue} pounds = ${pounds_to_kilos} kilos`;
-    } else {
-        outputOne.textContent = "0 meters = 0.0 feet | 0 feet = 0.0 meters";
-        outputTwo.textContent = "0 liters = 0.0 gallons | 0 gallons = 0.0 liters"
-        outputThree.textContent = "0 kilos = 0.0 pounds | 0 pounds = 0.0 kilos"
+        return
+    } else if(!isInputValueValid()){
+        outputOne.textContent = `Invalid. Please choose a number between 0 and ${VALUE_MAX}.`
+        outputTwo.textContent = `Invalid. Please choose a number between 0 and ${VALUE_MAX}.`
+        outputThree.textContent = `Invalid. Please choose a number between 0 and ${VALUE_MAX}.`
+        return        
     }
+    
+    outputOne.textContent = "0 meters = 0.0 feet | 0 feet = 0.0 meters";
+    outputTwo.textContent = "0 liters = 0.0 gallons | 0 gallons = 0.0 liters"
+    outputThree.textContent = "0 kilos = 0.0 pounds | 0 pounds = 0.0 kilos"
+    
+}
+
+//Helper functions
+
+function isNumberUnderLimit(){
+    return Number(inputElValue) < VALUE_MAX? true : false
+}
+
+function isNumberAboveLimit(){
+    return Number(inputElValue)>=0? true:false
+}
+
+function isInputValueValid(){
+    return isNumberUnderLimit()&&isNumberAboveLimit()? true:false
 }

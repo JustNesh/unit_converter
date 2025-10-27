@@ -19,6 +19,11 @@ body {
   background-image: linear-gradient(135deg, #6943FF, #C4B5FD);
 }
 
+#outer-container{
+  height: fit-content;
+  width: fit-content;
+}
+
 #hero-container{
   height: 285px;
   width: 550px;
@@ -125,6 +130,7 @@ body {
   color: #5A537B;
   font-size: 18px;
   font-weight: 500;
+  margin-top: 10px;
   margin-bottom: 0;
 }
 
