@@ -16,6 +16,7 @@ body {
   align-items: center;
   width: 100vw;
   min-height: 100vh;
+  background-image: linear-gradient(135deg, #6943FF, #C4B5FD);
 }
 
 #hero-container{
@@ -28,6 +29,10 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
+  border-left: 1px solid black;
+  border-top: 1px solid black;
+  border-right: 1px solid black;
+  box-sizing: border-box;
 }
 
 #hero{
@@ -36,6 +41,7 @@ body {
   font-size: 26px;
   font-weight: bolder;
   margin-top: 14px;
+  text-shadow: 0 0 4px black;
 }
 
 #input-el{
@@ -45,14 +51,20 @@ body {
   text-align: center;
   border-radius: 5px;
   color: white;
-  width: fit-content;
-  max-width: 100px;
+  max-width: 80%;
+  width: 95px;
+  min-width: 95px;
   height: fit-content;
-  min-height: 50px;
+  min-height: 80px;
   font-family: 'Inter';
   font-size: 58px;
   font-weight: bolder;
+  /*
+  width: 100%;
+  box-sizing: border-box;
+  max-width: 80%;
   caret-color: #6943FF;
+  */
 }
 
 #input-el::-webkit-inner-spin-button, #input-el::-webkit-outer-spin-button{
@@ -69,10 +81,55 @@ body {
   color: #3D3D3D;
   border-radius:  10px;
   border: 1px solid white;
+  cursor: pointer;
+  transition: all 1s ease;
+}
+
+#convert-btn:hover{
+  transform: scale(1.05);
+  box-shadow: 0 0 5px black;
 }
 
 #output-outer-container{
   height: 400px;
-  background-color: aliceblue;
+  background-color: #F4F4F4;
   width: 550px;
+  padding: 10px 10px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+  justify-content: center;
+  border-left: 1px solid black;
+  border-bottom: 1px solid black;
+  border-right: 1px solid black;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.output-container{
+  background-color: white;
+  width: 90%;
+  height: 110px;
+  box-sizing: border-box;
+  margin: 0px auto 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.output-header{
+  font-family: "Inter";
+  color: #5A537B;
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 0;
+}
+
+.output{
+  color: #353535;
+  font-size: 16px;
+  text-shadow: 0 0 .5px black;
 }
